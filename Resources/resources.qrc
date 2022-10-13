@@ -1,0 +1,9 @@
+<RCC>
+    <qresource prefix="/Resources">
+        <file>img/headphones (2).png</file>
+        <file>img/silence.png</file>
+        <file>img/sand-clock.png</file>
+        <file>img/process.png</file>
+        <file>img/choice.png</file>
+    </qresource>
+</RCC>
