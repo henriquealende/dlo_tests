@@ -44,7 +44,7 @@ class UI_Buttons():
 
         if nameCheck and genderCheck and ageCheck and knowledgeCheck:
 
-            self.randomlist = rd.sample(range(0, 3), 3)
+            self.randomlist = rd.sample(range(0, 5), 5)
             self.amplitude = (rd.randint(6,10))/10
             self.amplitudeChangeStaircase = self.amplitude/20
             self.amplitudeChangePest = 2
@@ -148,21 +148,21 @@ class UI_Buttons():
         self.animation.start()
         self.ui.nextStepButton.setEnabled(False)
         self.ui.testSoundButton.setEnabled(True)
-        if self.currentAudioID == 'low' and self.currentMethod == 'Staircase':
-            self.GH_Low_STAIR = self.gainHistory
-        elif self.currentAudioID == 'mid' and self.currentMethod == 'Staircase':
-            self.GH_Mid_STAIR = self.gainHistory
-        elif self.currentAudioID == 'high' and self.currentMethod == 'Staircase':
-            self.GH_High_STAIR == self.gainHistory
-        elif self.currentAudioID == 'low' and self.currentMethod == 'PEST':
-            self.GH_Low_PEST = self.gainHistory
-        elif self.currentAudioID == 'mid' and self.currentMethod == 'PEST':
-            self.GH_Mid_PEST = self.gainHistory
-        elif self.currentAudioID == 'high' and self.currentMethod == 'PEST':
-            self.GH_High_PEST = self.gainHistory
+        if self.currentAudioID == '125':
+            self.GH_125 = self.gainHistory
+        elif self.currentAudioID == '250':
+            self.GH_250 = self.gainHistory
+        elif self.currentAudioID == '500':
+            self.GH_500 == self.gainHistory
+        elif self.currentAudioID == '2000':
+            self.GH_2000 = self.gainHistory
+        elif self.currentAudioID == '4000':
+            self.GH_4000 = self.gainHistory
+        elif self.currentAudioID == '8000':
+            self.GH_8000 = self.gainHistory
         self.gainHistory = []
 
-        if self.orderAudio >= 2:
+        if self.orderAudio >= 4:
             self.ui.testeChooseText.setText('Finalize o teste')
             self.ui.circularProgressBarBase.setGraphicsEffect(None)
             self.ui.stackedWidget.setCurrentWidget(self.ui.final_page)

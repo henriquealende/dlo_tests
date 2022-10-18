@@ -18,27 +18,19 @@ def readAndPlayReference(type):
     status = sd.wait()
 
 def readAndPlayTest(order, amplitude):
-    filename_low = 'Resources/audios/impactLowFrequency05.wav'
-    filename_mid = 'Resources/audios/impactMidFrequency10.wav'
-    filename_high = 'Resources/audios/impactHighFrequency10.wav'
+    freq = ['125', '250', '2000', '4000', '8000']
+    currentImpact = eval("'Resources/audios/impact{}.wav'".format(freq[order]))
     filename_compressor = 'Resources/audios/VESH_2800_4189_FD.wav'
-    low_impulse_timeData, _ = sf.read(filename_low, dtype='float32')
-    mid_impulse_timeData, _ = sf.read(filename_mid, dtype='float32')
-    high_impulse_timeData, _ = sf.read(filename_high, dtype='float32')
+    impulse_timeData, _ = sf.read(str(currentImpact), dtype='float32')
     compressor_timeData, samplingRate = sf.read(filename_compressor, dtype='float32')
-    test_sounds = [low_impulse_timeData, mid_impulse_timeData, high_impulse_timeData]
-    currentAudio = (amplitude*(test_sounds[order])+compressor_timeData)
+    currentAudio = (amplitude*(impulse_timeData)+compressor_timeData)
     sd.play(currentAudio, samplingRate)
     status = sd.wait()
-    if order == 0:
-        currentAudioID = 'low'
-    elif order ==1:
-        currentAudioID = 'mid'
-    else:
-        currentAudioID = 'high'
+    currentAudioID = str(freq[order])
+    return currentAudioID
 
 def saveUserFile(ID, name, age, gender, knowledge,
-        GH_L_S, GH_M_S, GH_H_S, GH_L_P, GH_M_P, GH_H_P):
+        GH_125, GH_250, GH_500, GH_2000, GH_4000, GH_8000):
     user = {
         'personal_info': {
                 'name': name,
@@ -47,12 +39,12 @@ def saveUserFile(ID, name, age, gender, knowledge,
                 'knowledge': knowledge
         },
         'answer': {
-                'GH_Low_STAIR': GH_L_S,
-                'GH_Mid_STAIR': GH_M_S,
-                'GH_High_STAIR': GH_H_S,
-                'GH_Low_PEST': GH_L_P,
-                'GH_Mid_PEST': GH_M_P,
-                'GH_High_PEST': GH_H_P
+                'GH_125': GH_125,
+                'GH_250': GH_250,
+                'GH_500': GH_500,
+                'GH_2000': GH_2000,
+                'GH_4000': GH_4000,
+                'GH_8000': GH_8000
         }
     }
    
