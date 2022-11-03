@@ -134,7 +134,7 @@ class UI_Buttons():
         self.negativeAnswerCheck = True
 
     def nextStepTest(self):
-        self.progress += 33
+        self.progress += 16
         self.ProgressBarValue(self.progress)
         self.amplitude = self.gainHistory[0]
 
@@ -153,7 +153,7 @@ class UI_Buttons():
         elif self.currentAudioID == '250':
             self.GH_250 = self.gainHistory
         elif self.currentAudioID == '500':
-            self.GH_500 == self.gainHistory
+            self.GH_500 = self.gainHistory
         elif self.currentAudioID == '2000':
             self.GH_2000 = self.gainHistory
         elif self.currentAudioID == '4000':
@@ -163,7 +163,6 @@ class UI_Buttons():
         self.gainHistory = []
 
         if self.orderAudio >= 4:
-            self.ui.testeChooseText.setText('Finalize o teste')
             self.ui.circularProgressBarBase.setGraphicsEffect(None)
             self.ui.stackedWidget.setCurrentWidget(self.ui.final_page)
             fadeIn = QGraphicsOpacityEffect(self.ui.final_page)
@@ -186,8 +185,8 @@ class UI_Buttons():
 
     def closeApp(self):
         saveUserFile(self.idUser, self.name, self.gender, self.age, self.knowledge,
-                self.GH_Low_STAIR, self.GH_Mid_STAIR, self.GH_High_STAIR, self.GH_Low_PEST,
-                self.GH_Mid_PEST, self.GH_High_PEST)
+                self.GH_125, self.GH_250, self.GH_500, self.GH_2000,
+                self.GH_4000, self.GH_8000)
         self.close()
 
     def closeAll(self):
