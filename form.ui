@@ -281,7 +281,7 @@ QPushButton:hover{
          <enum>QFrame::NoFrame</enum>
         </property>
         <property name="currentIndex">
-         <number>0</number>
+         <number>4</number>
         </property>
         <widget class="QWidget" name="welcome_page">
          <property name="styleSheet">
@@ -3837,7 +3837,10 @@ QLineEdit:hover {
 QLineEdit:focus {	
 	border: 2px solid rgb(247, 155, 25);
 }
-</string>
+
+QLineEdit:disabled {
+	background-color: rgb(165, 165, 165)
+}</string>
                </property>
                <property name="frameShape">
                 <enum>QFrame::NoFrame</enum>
@@ -3847,19 +3850,19 @@ QLineEdit:focus {
                </property>
                <layout class="QVBoxLayout" name="verticalLayout_31">
                 <property name="leftMargin">
-                 <number>150</number>
+                 <number>10</number>
                 </property>
                 <property name="topMargin">
-                 <number>30</number>
+                 <number>10</number>
                 </property>
                 <property name="rightMargin">
-                 <number>150</number>
+                 <number>10</number>
                 </property>
                 <property name="bottomMargin">
-                 <number>30</number>
+                 <number>25</number>
                 </property>
-                <item alignment="Qt::AlignHCenter">
-                 <widget class="QLabel" name="label_31">
+                <item>
+                 <widget class="QLabel" name="password">
                   <property name="font">
                    <font>
                     <family>Dosis</family>
@@ -3871,21 +3874,75 @@ QLineEdit:focus {
                    <string notr="true">color:rgb(247, 155, 25)</string>
                   </property>
                   <property name="text">
-                   <string>IDuser:</string>
+                   <string>Password:</string>
                   </property>
                  </widget>
                 </item>
-                <item>
-                 <widget class="QLineEdit" name="idUserLine">
+                <item alignment="Qt::AlignHCenter">
+                 <widget class="QLineEdit" name="passwordLine">
                   <property name="minimumSize">
                    <size>
-                    <width>0</width>
+                    <width>130</width>
                     <height>24</height>
                    </size>
                   </property>
                   <property name="maximumSize">
                    <size>
-                    <width>16777215</width>
+                    <width>130</width>
+                    <height>24</height>
+                   </size>
+                  </property>
+                  <property name="font">
+                   <font>
+                    <family>Dosis</family>
+                    <pointsize>13</pointsize>
+                   </font>
+                  </property>
+                  <property name="echoMode">
+                   <enum>QLineEdit::Password</enum>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLabel" name="idUser">
+                  <property name="enabled">
+                   <bool>false</bool>
+                  </property>
+                  <property name="font">
+                   <font>
+                    <family>Dosis</family>
+                    <pointsize>13</pointsize>
+                    <bold>true</bold>
+                   </font>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">QLabel{
+	color:rgb(247, 155, 25)
+}
+
+QLabel:disabled{
+	color: #808080;
+}</string>
+                  </property>
+                  <property name="text">
+                   <string>IDuser:</string>
+                  </property>
+                 </widget>
+                </item>
+                <item alignment="Qt::AlignHCenter">
+                 <widget class="QLineEdit" name="idUserLine">
+                  <property name="enabled">
+                   <bool>false</bool>
+                  </property>
+                  <property name="minimumSize">
+                   <size>
+                    <width>100</width>
+                    <height>24</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>100</width>
                     <height>24</height>
                    </size>
                   </property>

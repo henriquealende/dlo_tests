@@ -176,6 +176,15 @@ class UI_Buttons():
             self.orderAudio += 1
             self.ui.step_label.setText("etapa " + str(self.orderAudio + 1))
 
+    def passwordChange(self):
+        self.password = str(self.ui.passwordLine.text())
+        if self.password == 'juninho123':
+            self.ui.idUserLine.setEnabled(True)
+            self.ui.idUser.setEnabled(True)
+        else:
+            self.ui.idUserLine.setEnabled(False)
+            self.ui.idUser.setEnabled(False)
+
     def idUserChange(self):
         self.idUser = self.ui.idUserLine.text()
         if len(self.idUser) != 0:

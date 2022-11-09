@@ -37,6 +37,7 @@ class Main_Window(QWidget):
         self.ui.positiveButton.clicked.connect(lambda: bt.UI_Buttons.positiveAnswer(self))
         self.ui.negativeButton.clicked.connect(lambda: bt.UI_Buttons.negativeAnswer(self))
         self.ui.nextStepButton.clicked.connect(lambda: bt.UI_Buttons.nextStepTest(self))
+        self.ui.passwordLine.textChanged.connect(lambda: bt.UI_Buttons.passwordChange(self))
         self.ui.idUserLine.textChanged.connect(lambda: bt.UI_Buttons.idUserChange(self))
         self.ui.quitButton.clicked.connect(lambda: bt.UI_Buttons.closeApp(self))
 
