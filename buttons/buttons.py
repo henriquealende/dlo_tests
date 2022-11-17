@@ -134,7 +134,7 @@ class UI_Buttons():
         self.negativeAnswerCheck = True
 
     def nextStepTest(self):
-        self.progress += 16
+        self.progress += 20
         self.ProgressBarValue(self.progress)
         self.amplitude = self.gainHistory[0]
 
