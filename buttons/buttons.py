@@ -109,7 +109,7 @@ class UI_Buttons():
             self.amplitude = self.amplitude/(0.5*self.amplitudeChangePest)
         else:
             self.amplitude = self.amplitude/self.amplitudeChangePest
-        if len(self.gainHistory) > 15:
+        if len(self.gainHistory) > 2: #
             self.ui.nextStepButton.setEnabled(True)
             self.ui.positiveButton.setEnabled(False)
             self.ui.negativeButton.setEnabled(False)
@@ -125,7 +125,7 @@ class UI_Buttons():
             self.amplitude = self.amplitude*(0.5*self.amplitudeChangePest)
         else:
             self.amplitude = self.amplitude*self.amplitudeChangePest
-        if len(self.gainHistory) > 15:
+        if len(self.gainHistory) > 2: #
             self.ui.nextStepButton.setEnabled(True)
             self.ui.positiveButton.setEnabled(False)
             self.ui.negativeButton.setEnabled(False)
@@ -152,8 +152,6 @@ class UI_Buttons():
             self.GH_125 = self.gainHistory
         elif self.currentAudioID == '250':
             self.GH_250 = self.gainHistory
-        elif self.currentAudioID == '500':
-            self.GH_500 = self.gainHistory
         elif self.currentAudioID == '2000':
             self.GH_2000 = self.gainHistory
         elif self.currentAudioID == '4000':
@@ -194,8 +192,7 @@ class UI_Buttons():
 
     def closeApp(self):
         saveUserFile(self.idUser, self.name, self.gender, self.age, self.knowledge,
-                self.GH_125, self.GH_250, self.GH_500, self.GH_2000,
-                self.GH_4000, self.GH_8000)
+                    self.GH_125, self.GH_250, self.GH_2000, self.GH_4000, self.GH_8000)
         self.close()
 
     def closeAll(self):

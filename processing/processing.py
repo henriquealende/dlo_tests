@@ -30,7 +30,7 @@ def readAndPlayTest(order, amplitude):
     return currentAudioID
 
 def saveUserFile(ID, name, age, gender, knowledge,
-        GH_125, GH_250, GH_500, GH_2000, GH_4000, GH_8000):
+        GH_125, GH_250, GH_2000, GH_4000, GH_8000):
     user = {
         'personal_info': {
                 'name': name,
@@ -39,12 +39,11 @@ def saveUserFile(ID, name, age, gender, knowledge,
                 'knowledge': knowledge
         },
         'answer': {
-                'GH_125': GH_125,
-                'GH_250': GH_250,
-                'GH_500': GH_500,
-                'GH_2000': GH_2000,
-                'GH_4000': GH_4000,
-                'GH_8000': GH_8000
+                'GH_125': str(GH_125),
+                'GH_250': str(GH_250),
+                'GH_2000': str(GH_2000),
+                'GH_4000': str(GH_4000),
+                'GH_8000': str(GH_8000)
         }
     }
    
