@@ -109,7 +109,7 @@ class UI_Buttons():
             self.amplitude = self.amplitude/(0.5*self.amplitudeChangePest)
         else:
             self.amplitude = self.amplitude/self.amplitudeChangePest
-        if len(self.gainHistory) > 2: #
+        if len(self.gainHistory) > 12: #
             self.ui.nextStepButton.setEnabled(True)
             self.ui.positiveButton.setEnabled(False)
             self.ui.negativeButton.setEnabled(False)
@@ -125,7 +125,7 @@ class UI_Buttons():
             self.amplitude = self.amplitude*(0.5*self.amplitudeChangePest)
         else:
             self.amplitude = self.amplitude*self.amplitudeChangePest
-        if len(self.gainHistory) > 2: #
+        if len(self.gainHistory) > 12: #
             self.ui.nextStepButton.setEnabled(True)
             self.ui.positiveButton.setEnabled(False)
             self.ui.negativeButton.setEnabled(False)
